@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>Digital Garden</title>
+  <style>
+
+* {
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  background-color: #18224d;
+  color: #ffffff;
+  line-height: 1.6;
+
+
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "nav aside"
+    "footer footer";
+
+  grid-template-columns: 0.5fr 3fr;
+  grid-template-rows: auto 1fr auto auto;
+  min-height: 100vh;
+}
+
+h1,
+h2,
+h3 {
+  color: #0056b3;
+}
+
+a {
+  color: #ff6600;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+header {
+  grid-area: header;
+  background: #003d82;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  background-image: url("media/images/Space Background.png");
+
+  background-size: cover;       /* Scales image to cover full width/height */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+
+  /* Optional: Ensure the header has a defined height if content is small */
+  min-height: 200px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+
+header h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+header p {
+  margin: 10px;
+  color: #e9ecef;
+}
+
+
+nav {
+  grid-area: nav;
+  background: #111837;
+  padding: 10px 10px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+nav a {
+  text-decoration: none;
+  color: white;
+  background: #004494;
+  padding: 10px;
+  display: block;
+  border-radius: 6px;
+  text-align: center;
+
+
+  transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+  background: #003d82;
+  text-decoration: none;
+}
+
+
+main {
+  grid-area: main;
+  padding: 20px;
+}
+
+landing {
+  position: fixed; /* Or absolute */
+  font-size: 30px;
+  font-weight: 600;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: black;
+  color: white;
+  padding: 300px 100px;
+  text-align: center;
+
+
+  background-size: cover;       /* Scales image to cover full width/height */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+
+
+
+}
+
+landing_button,
+#changeText {
+background: #0056b3;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+border-radius: 6px;
+font-size: 25px;
+font-family: 'Poppins', Arial, sans-serif;
+
+transition: background 0.3s ease-in-out;
+}
+
+h0{
+  font-size: 100px;
+  font-weight: 600;
+  margin-top: 15px;
+  color: white;
+}
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  hero-text
+}
+
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #161822;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+
+  animation: fadeIn 1s ease-in-out;
+}
+
+button,
+#changeText {
+  background: #0056b3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Poppins', Arial, sans-serif;
+
+  transition: background 0.3s ease-in-out;
+}
+
+button:hover,
+#changeText:hover {
+  background: #003d82;
+}
+
+
+#text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+aside {
+  grid-area: aside;
+  background: #0a131d;
+  padding: 10px;
+}
+
+
+footer {
+  grid-area: footer;
+  background: #003d82;
+  color: white;
+  padding: 20px;
+  text-align: center;
+
+  background-image: url("media/images/Space Background.png");
+
+  background-size: cover;       /* Scales image to cover full width/height */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+
+  /* Optional: Ensure the header has a defined height if content is small */
+  min-height: 100px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/*
+  WEEK 5 TASK 3:
+  Simple fade-in animation.
+*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+.week6-form-section {
+  border-left: 6px solid #0056b3;
+}
+
+  #userForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+
+  .form-group input {
+    padding: 12px;
+    border: 2px solid #d0d7de;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Poppins', Arial, sans-serif;
+  }
+
+
+  .form-group input:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+  }
+
+  .form-help {
+    margin-top: 15px;
+    padding: 12px;
+    background: #3f51b5;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+
+  .auth-status {
+    margin-top: 15px;
+    padding: 12px;
+    background: #d2b352;
+    border-left: 5px solid #ffc107;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+
+  .auth-status.complete {
+    background: #d1e7dd;
+    border-left-color: #198754;
+    color: #0f5132;
+  }
+
+
+
+@media (max-width: 768px) {
+  body {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  header,
+  nav,
+  main,
+  aside,
+  footer {
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+
+  button,
+  #changeText {
+    width: 100%;
+  }
+
+  section {
+    padding: 15px;
+  }
+}
+
+        .glitch-text {
+            animation: textglitch 2s infinite;
+            color: #ffffff;
+            text-shadow: 0 0 5px #3a9efc;
+            margin-bottom: 10px;
+        }
+
+        @keyframes textglitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-3px, 3px); }
+            40% { transform: translate(-3px, -3px); }
+            60% { transform: translate(3px, 3px); }
+            80% { transform: translate(3px, -3px); }
+            100% { transform: translate(0); }
+        }
+
+        .blink {
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+
+
+
+  #cube-container {
+            width: 100px;
+            height: 100px;
+            perspective: 800px;
+            margin-bottom: 200px;
+
+
+        }
+
+        #cube {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            animation: rotate 15s infinite linear;
+
+        }
+
+        @keyframes rotate {
+            0% { transform: rotateX(0deg) rotateY(0deg); }
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+.cube-face{
+    position:absolute;
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    background:#000;
+    border:2px solid #02ccff;
+    box-shadow:0 0 15px #ffffff;
+}
+
+.cube-face canvas{
+    width:100%;
+    height:100%;
+    display:block;
+}
+
+        .front { transform: translateZ(50px); }
+        .back { transform: rotateY(180deg) translateZ(50px); }
+        .right { transform: rotateY(90deg) translateZ(50px); }
+        .left { transform: rotateY(-90deg) translateZ(50px); }
+        .top { transform: rotateX(90deg) translateZ(50px); }
+        .bottom { transform: rotateX(-90deg) translateZ(50px); }
+.hero-text,
+#central-content,
+p,
+.glitch-text,
+landing_button {
+    position: relative;
+    z-index: 8;
+    font-family: 'MozillaHeadline-Bold.ttf', sans-serif;
+}
+#central-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+    gap: 40px;
+}
+
+
+
+         #scanlines {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                to bottom,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 2px,
+                transparent 4px
+            );
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        #crt-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center, transparent 50%, rgba(0, 0, 0, 0.5) 100%);
+            pointer-events: none;
+            z-index: 8;
+        }
+
+        #noise {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.08;
+            pointer-events: none;
+            z-index: 9;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAAUVBMVEWFhYWDg4N3d3dtbW17e3t1dXWBgYGHh4d5eXlzc3OLi4ubm5uVlZWPj4+NjY19fX2JiYl/f39ra2uVlZWRkZGZmZlpaWmXl5dvb29xcXGTk5NnZ2c8TV1mAAAAG3RSTlNAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEAvEOwtAAAAX0lEQVR');
+        }
+
+@font-face {
+  font-family: 'MozillaHeadline-Bold.ttf';
+  /* Check local device first, then download if not found */
+  src: local('media/fonts/Mozilla_Headline/static/MozillaHeadline-Bold.ttf')
+
+  font-weight: normal;
+  font-style: normal;
+}
+
+.glitch-wrapper {
+   width: 100%;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   text-align: center;
+   background-color: #000000;
+}
+
+.glitch {
+   position: relative;
+   font-size: 78px;
+   font-weight: bold;
+   color: #FFFFFF;
+   letter-spacing: 3px;
+   z-index: 1;
+}
+
+.glitch:before, .glitch:after {
+   display: block;
+   content: attr(data-text);
+   position: absolute;
+   top: 0;
+   left: 0;
+   opacity: 0.8;
+}
+
+.glitch:before {
+   animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) both infinite;
+   color: #00FFFF;
+   z-index: -1;
+}
+
+.glitch:after {
+   animation: glitch-it 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) reverse both infinite;
+   color: #FF00FF;
+   z-index: -2;
+}
+
+@keyframes glitch-it {
+   0% { transform: translate(0); }
+   20% { transform: translate(-2px, 2px); }
+   40% { transform: translate(-2px, -2px); }
+   60% { transform: translate(2px, 2px); }
+   80% { transform: translate(2px, -2px); }
+   to { transform: translate(0); }
+}
+
+shader-doodle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+                inset: 0;
+    z-index: 0;
+}
+
+  </style>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
+    rel="stylesheet"
+  >
+
+
+
+</head>
+    <script src="https://unpkg.com/shader-doodle@alpha"></script>
+<body>
+
+  <landing>
+      <div id="scanlines"></div>
+      <div id="crt-effect"></div>
+      <div id="noise"></div>
+      <div class="hero-image">
+      <shader-doodle>
+  <script id="shaderv" type="x-shader/x-fragment">
+    /**************************
+    Void shader by Griffith Thomas
+    (@KiranWells - Codepen),
+    inspired by Minecraft end portal blocks
+    **************************/
+
+    // REQUIRED: Declare the uniform provided by shader-doodle
+
+
+    float scale = 30.0;
+
+    float random(in vec2 _st) {
+      return fract(dot(vec2((mod(_st.x / cos(_st.y), 5.0) * 1000.0)), vec2(1.1)));
+    }
+
+    vec2 random2(vec2 p) {
+      return vec2(random(p), random(p.yx + random(p)));
+    }
+
+    vec2 cell(vec2 st) {
+      vec2 i = floor(st);
+      vec2 f = fract(st);
+      vec2 point = random2(i);
+      vec2 dir = random2(-i);
+
+      // Animation happens here using u_time
+      point += cos(u_time + random(i) * 12.2 + point.y) * dir / 4.;
+
+      vec2 diff = point - f;
+      return (smoothstep(0.1, 0.11, abs(diff)));
+    }
+void main() {
+  vec2 st = gl_FragCoord.xy / 1000.0 * scale + 2.0;
+  vec3 color = vec3(0.0);
+  vec3 black = vec3(0.0); // Fixed syntax error from original (0.0.0.0)
+  vec3 green = vec3(0.1, 0.2, 0.4);
+  vec3 dgreen = vec3(0.2, 0.2, 0.3);
+  vec3 bgreen = vec3(0.1, 0.4, 0.8);
+
+  for(float i = 0.; i < 2.; i++){
+    vec2 dist = cell(st * i).xy;
+    color += mix(green, black, dist.x + dist.y);
+    dist = cell(st * (2. + i)).xy;
+    color += mix(dgreen, black, dist.x + dist.y);
+    dist = cell(st * (3. + i)).xy;
+    color += mix(bgreen, black, dist.x + dist.y);
+  }
+
+  // Set alpha to a value less than 1.0 for translucency (e.g., 0.5 for 50% opacity)
+  gl_FragColor = vec4(color, 0.7);
+}
+  </script>
+</shader-doodle>
+
+          <div class="hero-text">
+
+            <h0> </h0>
+          </div>
+
+        <div id="central-content">
+<div id="cube-container">
+    <div id="cube">
+        <div class="cube-face front"><canvas></canvas></div>
+        <div class="cube-face back"><canvas></canvas></div>
+        <div class="cube-face right"><canvas></canvas></div>
+        <div class="cube-face left"><canvas></canvas></div>
+        <div class="cube-face top"><canvas></canvas></div>
+        <div class="cube-face bottom"><canvas></canvas></div>
+    </div>
+</div>
+            </div>
+
+<div class="glitch-wrapper">
+   <div class="glitch" data-text="DIGITAL GARDEN">DIGITAL GARDEN</div>
+</div>
+            <p>Welcome to my portfolio, here lies electric sheep and disrupted sleep</p>
+            <audio id="bgSound" src="media/audio/win95.mp3" preload="auto"></audio>
+
+
+            <div class="glitch-text">
+            <landing_button onclick="document.getElementById('bgSound').play()">Power Up The Electric Sheep</landing_button>
+            </div>
+
+
+
+            <script>
+                // Wait for the page to load
+                window.addEventListener('load', () => {
+                    const audio = document.getElementById('bgSound');
+                    audio.volume = 0.25; // Sets volume to 50%
+                    // Listen for the 'ended' event, which fires when playback is complete
+                    audio.addEventListener('ended', () => {
+                        // Replace 'https://example.com' with your target URL
+                        window.location.href = 'index.html';
+                    });
+
+                    // Start playing the audio
+                    audio.play().catch(error => {
+                        console.log("Autoplay prevented:", error);
+                    });
+                });
+            </script>
+
+                        <script>
+const chars =
+"x9R!&jT8w4M#2kL0z@6Q*1U$o3A%r7P#y5X^c9J(v7W&2B!re8L$0m*Z+d3T^7aF#n6R!@5W%k1O#8jQ*p9M&0xY$";
+
+const colors = ["#FF69B4","#FF1493"];
+
+document.querySelectorAll(".cube-face canvas").forEach(canvas => {
+
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = 100;
+    canvas.height = 100;
+
+    const fontSize = 10;
+    const columns = Math.floor(canvas.width / fontSize);
+
+    const drops = [];
+
+    for(let i=0;i<columns;i++)
+        drops[i]=Math.random()*10;
+
+    function draw(){
+
+        ctx.fillStyle="rgba(0,0,0,0.12)";
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+
+        ctx.font=fontSize+"px monospace";
+
+        for(let i=0;i<columns;i++){
+
+            ctx.fillStyle=
+                colors[Math.floor(Math.random()*colors.length)];
+
+            ctx.fillText(
+                chars[Math.floor(Math.random()*chars.length)],
+                i*fontSize,
+                drops[i]*fontSize
+            );
+
+            drops[i]++;
+
+            if(drops[i]*fontSize>canvas.height || Math.random()>0.98){
+                drops[i]=0;
+            }
+        }
+    }
+
+    setInterval(draw,50);
+
+});
+            </script>
+
+
+          </div>
+    </div>
+  </landing>
+
+</body>
+</html>

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<!-- 
+  WEEK 3, WEEK 4, WEEK 5 INTEGRATED HTML FILE
+
+  WEEK 3:
+  We used JavaScript to change text when a button is clicked.
+
+  WEEK 4:
+  We used HTML layout sections:
+  header, nav, main, aside, and footer.
+
+  WEEK 5:
+  We improve the visual design using typography, spacing, colors, and layout cards.
+-->
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- 
+    WEEK 4 RESPONSIVE DESIGN:
+    This viewport tag helps the webpage display correctly on mobile, tablet, and desktop screens.
+  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ <title>Digital Garden</title>
+
+  <!-- 
+    WEEK 5 TYPOGRAPHY:
+    This imports the Poppins font from Google Fonts.
+    Poppins gives the webpage a cleaner and more modern appearance.
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" 
+    rel="stylesheet"
+  >
+
+  <!-- 
+    This connects the external CSS file.
+    styles.css now contains Week 4 responsive layout and Week 5 visual design.
+  -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <!-- 
+    WEEK 4 CSS GRID:
+    The body is styled as a CSS Grid container in styles.css.
+    It arranges header, nav, main, aside, and footer.
+  -->
+
+  <header>
+      <div class="hero-image">
+          <div class="hero-text">
+            <h1>Digital Garden</h1>
+            <h2>Robi Atlas Mod</h2>
+          </div>
+    </div>
+  </header>
+
+
+
+
+  <nav>
+    <!-- 
+      WEEK 4 FLEXBOX:
+      The navigation menu is styled using Flexbox in styles.css.
+    -->
+    <ul>
+      <li>
+        <a href="index.html" target="_blank">
+          Home
+        </a>
+      </li>
+
+      <li>
+        <a href="https://www.youtube.com/" target="_blank">About</a>
+      </li>
+
+      <li>
+        <a href="#">Services</a>
+      </li>
+
+      <li>
+        <a href="https://github.com/CaffeinatedAndroid">Github</a>
+      </li>
+
+      <li>
+        <a href="robi_page.html">Robi Project</a>
+      </li>
+
+      <li>
+        <a href="#">HVAC Backpack</a>
+      </li>
+
+      <li>
+        <a href="#">Repair Work</a>
+      </li>
+
+
+    </ul>
+  </nav>
+
+  <main class="container">
+    <!-- 
+      WEEK 5 SPACING:
+      The container class controls max-width, margin, and padding.
+      This makes the content easier to read.
+    -->
+
+    <section>
+      <!-- 
+        WEEK 5 AESTHETICS:
+        Each section is styled like a card with:
+        - white background
+        - padding
+        - rounded corners
+        - box shadow
+        - fade-in animation
+      -->
+
+      <h2>What is the Atlas Mod?</h2>
+
+      <p>
+        This project is where I apply new knowledge in order to develop a complete robotics platform using the generation 1 Robis as a chasis. This will allow me to expand into building completely new robots and hardware.
+
+        This also serves as a platform for me to try new AI architectures and research robot embodiment.
+      </p>
+
+      <a href="https://github.com/CaffeinatedAndroid/Robi-Mindware">Visit Repo</a>
+
+      <p>
+        Currently I am working on a new microcrontroller and tidying up some wiring before expanding the basic software I've built.
+      </p>
+    </section>
+
+    <section>
+      <!-- 
+        WEEK 3 JAVASCRIPT ACTIVITY:
+        This section keeps the original JavaScript button activity from Lab 3.
+      -->
+
+      <h2>Initial Prototyping</h2>
+
+      <p>
+        I started by creating an upgrade for the eyes that use round LCDs to allow further expression, these tie into a SBC, initially I started with a Raspberry Pi Zero 2w however the limited ram created issues. The current SBC is the Orangepi Zero 2w 4G, optimally I'd like to use a 8GB or 16GB Radxa Zero but for the sake of development cost, the Orangepi will do.
+      </p>
+
+      <img src="media/images/eyes2.png" alt="Robi LCD Eyes" width= 30%>
+      <img src="media/images/eyes1.png" alt="Robi LCD Eyes" width= 30%>
+      <img src="media/images/robis.jpg" alt="Robi LCD Eyes" width= 30%>
+
+      <!-- 
+        WEEK 3:
+        JavaScript uses id="changeText" to find this button.
+      -->
+
+      <p id="text">This text will change.</p>
+      <!-- 
+        WEEK 3:
+        JavaScript uses id="text" to change this paragraph.
+      -->
+    </section>
+
+    <section>
+      <!-- 
+        WEEK 5 REAL-LIFE EXAMPLE:
+        This helps students understand how aesthetics are used in real websites.
+      -->
+
+      <h2>Prototyping New Hardware</h2>
+
+      <p>
+        Imagine this is a student portfolio website. A clean font, consistent colors,
+        enough spacing, and simple cards make the page easier for visitors to understand.
+      </p>
+
+      <img src="media/images/tester.png" alt="Robi LCD Eyes" width= 30%>
+      <img src="media/images/testFrame.png" alt="Robi LCD Eyes" width= 30%>
+      <img src="media/images/signalsplitter.png" alt="Robi LCD Eyes" width= 30%>
+      <img src="media/images/boardproto.png" alt="Robi LCD Eyes" width= 30%>
+
+
+      <p>
+        In real life, websites such as university pages, online shops, portfolios,
+        and business websites all use typography, color, and spacing to create a better user experience.
+      </p>
+
+
+      <img src="media/images/amp.png" alt="Robi LCD Eyes" width= 30%>
+      <img src="media/images/lcdBreakout.png" alt="Robi LCD Eyes" width= 30%>
+<img src="media/images/board.png" alt="Robi LCD Eyes" width= 30%>
+<img src="media/images/eyeBreakout.jpg" alt="Robi LCD Eyes" width= 30%>
+<img src="media/images/EyeBreakout2.jpg" alt="Robi LCD Eyes" width= 30%>
+
+    </section>
+
+    <section class="week6-form-section">
+      <!--
+      WEEK 6 PROCESSING USER INPUT:
+      This form collects information from the user.
+      JavaScript will:
+      1. Read the name and email fields.
+      2. Check that both fields are not empty.
+      3. Stop the page from refreshing using
+      event.preventDefault().
+      4. Save the user information in localStorage.
+      5. Display that registration and authentication are complete.
+      Real-life example:
+      This is similar to a student registering for a school event,
+      online class,
+      or club membership form.
+      -->
+      <h2>Week 6: Processing User Input with JavaScript</h2>
+      <p>
+      Real-life example: imagine a student is joining a school
+      event or club.
+      The website needs to collect the student's name and email
+      before confirming registration.
+      </p>
+      <form id="userForm">
+      <div class="form-group">
+      <label for="name">Student Name</label>
+      <input
+      type="text"
+      id="name"
+      name="name"
+      placeholder="Enter your name"
+      >
+      </div>
+      <div class="form-group">
+      <label for="email">Student Email</label>
+      <input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="Enter your email"
+      >
+      </div>
+      <button type="submit">Register</button>
+      </form>
+      <p id="authStatus" class="auth-status">
+      Registration status: Not completed
+      </p>
+      <p class="form-help">
+      Try submitting the form with empty fields first. JavaScript
+      will stop the form
+      and ask you to complete all fields. After valid information
+      is submitted,
+      JavaScript saves the details and shows authentication
+      complete.
+      </p>
+      </section>
+
+  </main>
+
+  <aside>
+    <!-- 
+      WEEK 4 SIDEBAR:
+      The aside section works as a sidebar on larger screens.
+
+      WEEK 4 RESPONSIVE DESIGN:
+      On mobile screens, the sidebar moves below the main content.
+    -->
+
+    <h2>Lab 5 Checklist</h2>
+
+    <ul>
+      <li>Use Poppins font</li>
+      <li>Apply a clean color scheme</li>
+      <li>Add readable line spacing</li>
+      <li>Use card-style sections</li>
+      <li>Add button hover transition</li>
+      <li>Add fade-in animation</li>
+      <li>Keep Week 3 JavaScript working</li>
+      <li>Keep Week 4 responsive layout working</li>
+    </ul>
+  </aside>
+
+  <footer>
+    <p>Footer - CST150 Web Technologies</p>
+    <p>Week 5: Frontend Aesthetics with Week 3 and Week 4 Integration</p>
+  </footer>
+
+  <!-- 
+    WEEK 3 JAVASCRIPT:
+    script.js is placed before the closing body tag so the HTML loads first.
+  -->
+  <script src="script.js"></script>
+
+</body>
+</html>

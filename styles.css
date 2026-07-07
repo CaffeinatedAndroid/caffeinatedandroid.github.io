@@ -1,0 +1,505 @@
+/* 
+  WEEK 3, WEEK 4, WEEK 5 INTEGRATED CSS FILE
+
+  WEEK 3:
+  Styling for the JavaScript button and paragraph.
+
+  WEEK 4:
+  CSS Grid layout, Flexbox navigation, and media queries.
+
+  WEEK 5:
+  Typography, colors, spacing, cards, transitions, and animation.
+*/
+
+/* 
+  WEEK 5:
+  box-sizing makes layout spacing easier to control.
+*/
+* {
+  box-sizing: border-box;
+}
+
+/* 
+  WEEK 5 TASK 1:
+  Enhanced typography and color scheme.
+*/
+body {
+  font-family: 'Poppins', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+
+  background-color: #18224d;
+  color: #ffffff;
+  line-height: 1.6;
+
+  /* 
+    WEEK 4:
+    CSS Grid is used for the main page layout.
+  */
+  display: grid;
+  grid-template-areas:
+    "header header"
+    "nav main"
+    "nav aside"
+    "footer footer";
+
+  grid-template-columns: 0.5fr 3fr;
+  grid-template-rows: auto 1fr auto auto;
+  min-height: 100vh;
+}
+
+/* 
+  WEEK 5 TASK 1:
+  Heading colors.
+*/
+h1,
+h2,
+h3 {
+  color: #0056b3;
+}
+
+/* 
+  WEEK 5 TASK 1:
+  General link styling.
+*/
+a {
+  color: #ff6600;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 
+  WEEK 4:
+  Header area in CSS Grid.
+*/
+header {
+  grid-area: header;
+  background: #003d82;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  background-image: url("media/images/Space Background.png");
+
+  background-size: cover;       /* Scales image to cover full width/height */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+
+  /* Optional: Ensure the header has a defined height if content is small */
+  min-height: 200px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+
+/* Not needed styles */
+
+/* 
+  WEEK 5:
+  Header text needs to stay white because the header background is dark.
+*/
+header h1 {
+  color: white;
+  margin-bottom: 10px;
+}
+
+header p {
+  margin: 10px;
+  color: #e9ecef;
+}
+
+/* 
+  WEEK 4:
+  Navigation area.
+*/
+nav {
+  grid-area: nav;
+  background: #111837;
+  padding: 10px 10px;
+}
+
+/* 
+  WEEK 4:
+  Flexbox navigation.
+*/
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* 
+  WEEK 4 + WEEK 5:
+  Navigation links are styled like buttons.
+*/
+nav a {
+  text-decoration: none;
+  color: white;
+  background: #004494;
+  padding: 10px;
+  display: block;
+  border-radius: 6px;
+  text-align: center;
+
+  /* 
+    WEEK 5:
+    Smooth transition improves user experience.
+  */
+  transition: background 0.3s ease-in-out;
+}
+
+nav a:hover {
+  background: #003d82;
+  text-decoration: none;
+}
+
+/* 
+  WEEK 4:
+  Main content area.
+*/
+main {
+  grid-area: main;
+  padding: 20px;
+}
+
+landing {
+  position: fixed; /* Or absolute */
+  font-size: 30px;
+  font-weight: 600;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #003d82;
+  color: white;
+  padding: 300px 100px;
+  text-align: center;
+  background-image: url("media/images/Space Background.png");
+
+  background-size: cover;       /* Scales image to cover full width/height */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+
+  /* Optional: Ensure the header has a defined height if content is small */
+  min-height: 200px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+
+}
+
+landing_button,
+#changeText {
+background: #0056b3;
+color: white;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+border-radius: 6px;
+font-size: 25px;
+font-family: 'Poppins', Arial, sans-serif;
+
+/*
+ *   WEEK 5 TASK 3:
+ *   Smooth background transition on hover.
+ */
+transition: background 0.3s ease-in-out;
+}
+
+h0{
+  font-size: 100px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+
+/*
+  WEEK 5 TASK 2:
+  Container improves spacing and readability.
+*/
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 
+  WEEK 5 TASK 2 + TASK 3:
+  Sections are styled like clean content cards.
+*/
+section {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: #161822;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  /* 
+    WEEK 5 TASK 3:
+    Fade-in animation is applied to each section.
+  */
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* 
+  WEEK 3 + WEEK 5 TASK 3:
+  Button is used by JavaScript and styled for better aesthetics.
+*/
+button,
+#changeText {
+  background: #0056b3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 16px;
+  font-family: 'Poppins', Arial, sans-serif;
+
+  /* 
+    WEEK 5 TASK 3:
+    Smooth background transition on hover.
+  */
+  transition: background 0.3s ease-in-out;
+}
+
+/* 
+  WEEK 5 TASK 3:
+  Button hover effect.
+*/
+button:hover,
+#changeText:hover {
+  background: #003d82;
+}
+
+/* 
+  WEEK 3:
+  This paragraph is changed by JavaScript.
+*/
+#text {
+  font-size: 18px;
+  font-weight: 600;
+  margin-top: 15px;
+}
+
+/* 
+  WEEK 4:
+  Sidebar area.
+*/
+aside {
+  grid-area: aside;
+  background: #0a131d;
+  padding: 10px;
+}
+
+/* 
+  WEEK 5:
+  Better spacing inside sidebar list.
+*/
+aside ul {
+  padding-left: 10px;
+}
+
+aside li {
+  margin-bottom: 8px;
+}
+
+/* 
+  WEEK 4:
+  Footer area.
+*/
+footer {
+  grid-area: footer;
+  background: #003d82;
+  color: white;
+  padding: 20px;
+  text-align: center;
+
+  background-image: url("media/images/Space Background.png");
+
+  background-size: cover;       /* Scales image to cover full width/height */
+  background-position: center;  /* Centers the image */
+  background-repeat: no-repeat; /* Prevents tiling */
+
+  /* Optional: Ensure the header has a defined height if content is small */
+  min-height: 100px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* 
+  WEEK 5 TASK 3:
+  Simple fade-in animation.
+*/
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+
+/*
+ WEEK 6 PROCESSING USER INPUT:  *
+ This styles the student registration form.
+ The existing Week 3, Week 4, and Week 5 styles are kept above.
+ */
+.week6-form-section {
+  border-left: 6px solid #0056b3;
+}
+  /*
+   W EEK 6:                                   *
+   Form layout.
+   */
+  #userForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  }
+  /*
+   W EEK 6:                                   *
+   Each form field group contains a label and input.
+   */
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  /*
+   W EEK 6:                                   *
+   Form label styling.
+   */
+  .form-group label {
+    font-weight: 600;
+    color: #FFFFFF;
+  }
+  /*
+   W EEK 6:                                   *
+   Input box styling.
+   */
+  .form-group input {
+    padding: 12px;
+    border: 2px solid #d0d7de;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: 'Poppins', Arial, sans-serif;
+  }
+
+  /*
+   W *EEK 6:
+   When the user clicks inside an input box, it becomes highlighted.
+   */
+  .form-group input:focus {
+    outline: none;
+    border-color: #0056b3;
+    box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.15);
+  }
+  /*
+   W *EEK 6:
+   Helper message below the form.
+   */
+  .form-help {
+    margin-top: 15px;
+    padding: 12px;
+    background: #3f51b5;
+    border-radius: 6px;
+    font-size: 15px;
+  }
+  /*
+   W *EEK 6 AUTHENTICATION STATUS:
+   This message first shows that registration is not completed.
+   */
+  .auth-status {
+    margin-top: 15px;
+    padding: 12px;
+    background: #d2b352;
+    border-left: 5px solid #ffc107;
+    border-radius: 6px;
+    font-weight: 600;
+  }
+  /*
+   W *EEK 6 AUTHENTICATION STATUS:
+   JavaScript adds the class "complete" after valid input is
+   submitted.
+   This changes the message to look successful.
+   */
+  .auth-status.complete {
+    background: #d1e7dd;
+    border-left-color: #198754;
+    color: #0f5132;
+  }
+
+
+/* 
+  WEEK 4:
+  Responsive layout for tablet and mobile screens.
+*/
+@media (max-width: 768px) {
+  body {
+    grid-template-areas:
+      "header"
+      "nav"
+      "main"
+      "aside"
+      "footer";
+
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  /* 
+    WEEK 4:
+    Navigation changes layout on smaller screens.
+  */
+  nav ul {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  nav a {
+    padding: 8px 12px;
+  }
+}
+
+/* 
+  WEEK 4:
+  Extra small mobile screen styling.
+*/
+@media (max-width: 480px) {
+  header,
+  nav,
+  main,
+  aside,
+  footer {
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* 
+    WEEK 5:
+    Full-width button is easier to tap on mobile.
+  */
+  button,
+  #changeText {
+    width: 100%;
+  }
+
+  section {
+    padding: 15px;
+  }
+}
