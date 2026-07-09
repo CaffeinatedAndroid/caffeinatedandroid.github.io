@@ -14,7 +14,7 @@
 body {
   font-family: "MozillaHeadline", Arial, sans-serif;
 
-  position: fixed;
+  position: relative;
   inset: 0;
 
   display: flex;
@@ -54,12 +54,12 @@ landing {
   justify-content: center;
 
   width: 100%;
-  height: 100%;
+
 
   position: relative;
   z-index: 5;
 
-  padding: 20px;
+
 }
 
 
@@ -193,6 +193,14 @@ landing_button {
 
   width: 100%;
   background: transparent;
+}
+
+
+.sheep-image {
+  width: 10%;
+  position: top;
+  z-index: 5;
+  opacity: 0.8;
 }
 
 .glitch {
@@ -345,14 +353,25 @@ shader-doodle {
     max-width: 100%;
     padding: 0 16px;
     font-size: 18px;
-    padding-bottom: 20%
+    padding-bottom: 5%
   }
+  .sheep-image {
+  width: 30%;
+  position: Center;
+  margin: 20px;
+  opacity: 0.8;
+  z-index: 5;
+}
+
 
   landing_button {
     font-size: 20px;
     padding-Top: 16px
   }
 }
+
+
+
 
 </style>
 
@@ -432,6 +451,7 @@ shader-doodle {
                     }
                   </script>
                 </shader-doodle>
+
               <div class="bar" style="animation: wipe 1s infinite 2s;"></div>
               <div class="bar" style="background-color: rgba(255,255,255,0.1);"></div>
 
@@ -454,6 +474,7 @@ shader-doodle {
                     DIGITAL GARDEN
                   </div>
                 </div>
+                <img class="sheep-image" src="media/images/Sheep.png" alt="Sheep">
                 <p class="hero-description">
                   Welcome to my portfolio, here lies electric sheep and disrupted sleep
                 </p>
