@@ -266,19 +266,15 @@ landing_button {
 
 shader-doodle {
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-
   width: 100%;
   height: 100%;
 
   position: absolute;
   z-index: 1;
 
-  padding: 20px;
+  padding: 0px;
 
+}
 
 @keyframes wipe {
   from {
@@ -375,20 +371,7 @@ shader-doodle {
 <body>
       <landing>
 
-              <div class="bar" style="animation: wipe 1s infinite 2s;"></div>
-              <div class="bar" style="background-color: rgba(255,255,255,0.1);"></div>
 
-              <div class="bar2" style="animation: wipe2 1s infinite 2s;"></div>
-              <div class="bar2" style="background-color: rgba(255,255,255,0.1);"></div>
-
-              <div class="bar3" style="animation: wipe2 1s infinite 2s;"></div>
-              <div class="bar3" style="background-color: rgba(255,255,255,0.1);"></div>
-
-              <div id="scanlines"></div>
-              <div id="crt-effect"></div>
-              <div id="noise"></div>
-
-              <div class="hero-image">
 
                 <shader-doodle>
                   <script id="shaderv" type="x-shader/x-fragment">
@@ -448,7 +431,20 @@ shader-doodle {
                     }
                   </script>
                 </shader-doodle>
+              <div class="bar" style="animation: wipe 1s infinite 2s;"></div>
+              <div class="bar" style="background-color: rgba(255,255,255,0.1);"></div>
 
+              <div class="bar2" style="animation: wipe2 1s infinite 2s;"></div>
+              <div class="bar2" style="background-color: rgba(255,255,255,0.1);"></div>
+
+              <div class="bar3" style="animation: wipe2 1s infinite 2s;"></div>
+              <div class="bar3" style="background-color: rgba(255,255,255,0.1);"></div>
+
+              <div id="scanlines"></div>
+              <div id="crt-effect"></div>
+              <div id="noise"></div>
+
+              <div class="hero-image">
                 <div class="hero-text">
                 </div>
 
