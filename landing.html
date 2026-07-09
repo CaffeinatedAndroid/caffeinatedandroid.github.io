@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
+<head>
 <style>
 
 @font-face {
@@ -14,47 +14,55 @@
 body {
   font-family: "MozillaHeadline", Arial, sans-serif;
 
-  margin: 0;
-  padding: 0;
+  position: fixed;
+  inset: 0;
 
-  background-color: #18224d;
-  color: #ffffff;
-  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  display: grid;
-
-  grid-template-areas:
-    "header header"
-    "nav main"
-    "nav aside"
-    "footer footer";
-
-  grid-template-columns: 0.5fr 3fr;
-  grid-template-rows: auto 1fr auto auto;
-
-  min-height: 100vh;
+  text-align: center;
 }
 
 landing {
   position: fixed;
+  inset: 0;
 
-  top: 0;
-  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-  width: 100%;
-  height: 100%;
+  text-align: center;
 
   background: #000;
   color: #fff;
 
   font-size: 30px;
   font-weight: 600;
-  text-align: center;
 
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  overflow: hidden;
 }
+
+
+.hero-image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+  z-index: 5;
+
+  padding: 20px;
+}
+
+
+
 
 landing_button,
 #changeText {
@@ -76,8 +84,14 @@ landing_button,
 
 
 .hero-description {
-  padding-left: 40px;
-  padding-right: 40px;
+  max-width: 650px;
+  width: 100%;
+
+  margin: 20px auto;
+
+  padding: 0 20px;
+
+  text-align: center;
 }
 
 .hero-text,
@@ -172,19 +186,13 @@ landing_button {
 }
 
 
-
 .glitch-wrapper {
   display: flex;
-
   justify-content: center;
   align-items: center;
 
   width: 100%;
-  height: 100%;
-
-  text-align: center;
-
-  background: #000;
+  background: transparent;
 }
 
 .glitch {
@@ -257,14 +265,19 @@ landing_button {
 
 
 shader-doodle {
-  position: absolute;
-  inset: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   width: 100%;
   height: 100%;
 
-  z-index: 0;
-}
+  position: absolute;
+  z-index: 1;
+
+  padding: 20px;
 
 
 @keyframes wipe {
@@ -318,10 +331,36 @@ shader-doodle {
   animation: wipe2 6s infinite;
 }
 
+
+
+@media (max-width: 768px) {
+
+  landing {
+    font-size: 20px;
+    padding: 20px;
+  }
+
+  .glitch {
+    font-size: 42px;
+    letter-spacing: 2px;
+  }
+
+  .hero-description {
+    max-width: 100%;
+    padding: 0 16px;
+    font-size: 18px;
+  }
+
+  landing_button {
+    font-size: 20px;
+    padding: 16px 24px;
+  }
+}
+
 </style>
 
 
-<head>
+      <script src="https://unpkg.com/shader-doodle@alpha"></script>
       <meta charset="UTF-8">
 
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -508,6 +547,6 @@ shader-doodle {
               </script>
               </div>
       </landing>
-  <script src="https://unpkg.com/shader-doodle@alpha"></script>
+
 </body>
 </html>
