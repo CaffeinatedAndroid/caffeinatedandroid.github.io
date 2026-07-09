@@ -52,10 +52,9 @@ body {
   WEEK 5 TASK 1:
   Heading colors.
 */
-h1,
 h2,
 h3 {
-  color: #0056b3;
+  color: #FFFFFF;
 }
 
 /* 
@@ -216,7 +215,11 @@ h0{
   margin-top: 15px;
 }
 
-
+h1{
+  font-size: 80px;
+  font-weight: 600;
+  margin-top: 15px;
+}
 /*
   WEEK 5 TASK 2:
   Container improves spacing and readability.
@@ -232,7 +235,7 @@ h0{
   Sections are styled like clean content cards.
 */
 section {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
   padding: 20px;
   background: #161822;
   border-radius: 8px;
@@ -502,4 +505,52 @@ footer p {
   section {
     padding: 15px;
   }
+}
+
+shader-doodle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  inset: 0;
+  z-index: 0;
+}
+
+div.video_gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+div.video_gallery-item {
+  width: 30%;
+  margin: 10px;
+}
+
+
+div.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+div.gallery-item {
+  margin: 5px;
+  border: 1px solid #FFFFFF;
+  width: 280px;
+}
+
+div.gallery-item:hover {
+  border: 1px solid blue;
+}
+
+div.gallery-item img {
+  width: 100%;
+  height: auto;
+}
+
+div.gallery-item div.desc {
+  padding: 15px;
+  text-align: center;
 }
