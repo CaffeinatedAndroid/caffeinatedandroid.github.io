@@ -8,96 +8,24 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
       <link rel="stylesheet" href="styles.css">
-      <script src="https://unpkg.com/shader-doodle@alpha"></script>
+
       <title>Digital Garden</title>
 </head>
 
 <body>
-                <shader-doodle>
-                  <script id="shaderv" type="x-shader/x-fragment">
-                    /**************************
-                    Void shader by Griffith Thomas
-                    (@KiranWells - Codepen),
-                    inspired by Minecraft end portal blocks
-                    **************************/
 
-                    float scale = 6.0;
-
-                    float random(in vec2 _st) {
-                      return fract(dot(vec2((mod(_st.x / cos(_st.y), 5.0) * 1000.0)), vec2(1.1)));
-                    }
-
-                    vec2 random2(vec2 p) {
-                      return vec2(random(p), random(p.yx + random(p)));
-                    }
-
-                    vec2 cell(vec2 st) {
-                      vec2 i = floor(st);
-                      vec2 f = fract(st);
-
-                      vec2 point = random2(i);
-                      vec2 dir = random2(-i);
-
-                      point += cos(u_time + random(i) * 12.2 + point.y) * dir / 4.;
-
-                      vec2 diff = point - f;
-
-                      return smoothstep(0.1, 0.11, abs(diff));
-                    }
-
-                    void main() {
-
-                      vec2 st = gl_FragCoord.xy / 1000.0 * scale + 2.0;
-
-                      vec3 color  = vec3(0.0);
-                      vec3 black  = vec3(0.0);
-                      vec3 green  = vec3(0.1, 0.2, 0.4);
-                      vec3 dgreen = vec3(0.2, 0.2, 0.3);
-                      vec3 bgreen = vec3(0.1, 0.4, 0.8);
-
-                      for (float i = 0.; i < 2.; i++) {
-
-                        vec2 dist = cell(st * i).xy;
-                        color += mix(green, black, dist.x + dist.y);
-
-                        dist = cell(st * (2. + i)).xy;
-                        color += mix(dgreen, black, dist.x + dist.y);
-
-                        dist = cell(st * (3. + i)).xy;
-                        color += mix(bgreen, black, dist.x + dist.y);
-                      }
-
-                      gl_FragColor = vec4(color, 0.7);
-                    }
-                  </script>
-                </shader-doodle>
-    <header>
+      <header>
               <div class="hero-image">
-                <div class="hero-text">
-                </div>
-
-                <div class="glitch-wrapper">
-                  <div class="glitch" data-text="DIGITAL GARDEN">
-                    DIGITAL GARDEN
+                  <div class="hero-text">
+                        <h1>Digital Garden</h1>
+                        <h2>Robi Atlas Mod</h2>
                   </div>
-                </div>
-<!--                <img class="sheep-image" src="media/images/Sheep.png" alt="Sheep">-->
-                <div class="glitch-wrapper2">
-                  <div class="glitch2" data-text="Robi Atlas Mod">
-                    Robi Atlas Mod
-                  </div>
-                </div>
-
-                </div>
-    </header>
+            </div>
+      </header>
 
 
     <nav>
-<input type="checkbox" id="slide" name="" value="" />
-	<div class="container">
-		<label for="slide" class="toggle">☰</label>
-		<nav class="sidebar">
-			<ul>
+          <ul>
                 <li>
                     <a href="landing.html"> Landing Page </a>
                 </li>
@@ -121,35 +49,17 @@
                 <li>
                     <a href="art_page.html"> Art </a>
                 </li>
-			</ul>
-		</nav>
-	</div>
-
+          </ul>
     </nav>
 
 
       <main class="container">
 
             <section>
-                      <h2>What is this Project?</h2>
+                      <h2>What is the Atlas Mod?</h2>
                       <p>
                         This project is where I apply new knowledge in order to develop a complete robotics platform using the generation 1 Robis as a chasis. This will allow me to expand into building completely new robots and hardware.
                         This also serves as a platform for me to try new AI architectures and research robot embodiment.
-                      </p>
-
-
-
-                      <div class="gallery">
-                                                      <div class="gallery-item">
-                                <a target="robis.jpg" href= "media/images/robis.jpg"> <img src="media/images/robis.jpg" alt="Robi LCD Eyes" width="600" height="400"> </a>
-                                <div class="desc">Stock Robis</div>
-                                </div>
-                     </div>
-                      <p>
-                        This project has kicked off after a period of learning all I could about these robots and similar robots from japan, since enrolling in a computer science degree, this project and robot will serve as an additional learning aid where I can implement what I have learned to create a complete robotics project.
-                      </p>
-                      <p>
-                        In addition to new software, this mod adds a range of new sensors, custom control boards and lively LCD eyes. I will eventually make the new driver board compatible with a range of servo brands to allow building from scratch with more available robotics servos. By working with the restraint of such a small robot, I can focus on smaller components and create a board that can be used in a larger viariety of diy bots.
                       </p>
 
                       <h2>Visit the Repository</h2>
@@ -162,24 +72,16 @@
             </section>
 
             <section>
-                      <h2>The Initial goals?</h2>
+                      <h2>Why would this matter?</h2>
                       <p>
-                        The initial goal is to create the new hardware and get the robot back to a fully operational state with new software.
+                        lorem ipsum
                       </p>
-
-
-                      <img src="media/images/Timeline.png" alt="Robi LCD Eyes" width= 100%>
             </section>
 
             <section>
                       <h2>Initial Prototyping</h2>
                       <p>
-                        I started by creating an upgrade for the eyes that use round LCDs to allow further expression, these tie into a SBC, initially I started with a Raspberry Pi Zero 2w however the limited ram created issues. The current SBC is the Orangepi Zero 2w 4GB, optimally I'd like to use a 8GB or 16GB Radxa Zero but for the sake of development cost, the Orangepi will do.
-                      </p>
-                                <a target="comp.png" href= "media/images/comp.png"> <img src="media/images/comp.png" alt="Robi LCD Eyes" width=100%> </a>
-                                <div class="desc"> <a>https://www.geeky-gadgets.com/single-board-computer-sbc-comparison-guide/ </a></div>
-                      <p>
-                        I started by using breakout boards and salvaged parts I had lying around. Got the eyes working but I need to implement frame buffers to improve framerate. In future I want to make a programto easily configure the visuals and calibrate offsets but that can wait until more final hardware is attained.
+                        I started by creating an upgrade for the eyes that use round LCDs to allow further expression, these tie into a SBC, initially I started with a Raspberry Pi Zero 2w however the limited ram created issues. The current SBC is the Orangepi Zero 2w 4G, optimally I'd like to use a 8GB or 16GB Radxa Zero but for the sake of development cost, the Orangepi will do.
                       </p>
 
 
@@ -195,78 +97,48 @@
                                 <a target="eyes1.png" href= "media/images/eyes1.png" > <img src="media/images/eyes1.png" alt="Robi LCD Eyes" width="600" height="400"> </a>
                                 <div class="desc">Testing LCD Eyes</div>
                                 </div>
-                     </div>
-                      <p>
-                        The LCDS used have been specifically selected for thier SPI connectors and thinness, I removed the 8 pin JST SH connector to thin the module more. This allows me to reduce bulk in such a confined area. It also helps longegevity as the ribbon cables can flex much easier and strain the conectors less.
-                      </p>
-
-                      <a> https://www.amazon.com.au/JESSINIE-Display-Module-Circular-Interface/dp/B0CB3V1366
-                      </a>
-
-
-                      <div class="gallery">
-                                <div class="gallery-item">
-                                <a target="lcd.jpg"  href="media/images/lcd.jpg"> <img src="media/images/lcd.jpg" alt="Robi LCD Eyes" width="600" height="400"> </a>
-                                <div class="desc">GC9A01 Driver IPS LCD Screen Module</div>
-                                </div>
 
 
                                 <div class="gallery-item">
-                                <a target="lcdBack.jpg" href= "media/images/lcdBack.jpg" > <img src="media/images/lcdBack.jpg" alt="Robi LCD Eyes" width="600" height="400"> </a>
-                                <div class="desc">GC9A01 Driver IPS LCD back side</div>
+                                <a target="robis.jpg" href= "media/images/robis.jpg"> <img src="media/images/robis.jpg" alt="Robi LCD Eyes" width="600" height="400"> </a>
+                                <div class="desc">Stock Robis</div>
                                 </div>
                      </div>
-
 
             </section>
 
             <section>
                       <h2>Prototyping New Hardware</h2>
                       <p>
-                        The first ting I needed to overcome was to talk to the SBUS servos, they arent common however are basically the exact same as the RS304md servos from Futaba. A blog site I follow has helped out a lot with this:
-
-                        The image below is of custom toolset I made to start working with the servos, It can use an ESP32 or a usb TTL adapter.
+                        The images here show various parts and stages of the robot, this is when I spend the most time figuring out optimal setups and plan for hardware consolidation with professionally manufactured PCBs
                       </p>
 
-                                            <div class="gallery">
-                            <div class="gallery-item">
-                                <a target="tester.png"  href="media/images/tester.png"> <img src="media/images/tester.png" alt="Robi LCD Eyes"  width="600" height="400"> </a>
-                                <div class="desc">Half Duplex Communications Debugger</div>
 
-
-                     </div>
-
-
-                      <p>
-                        This is where I finally learned that I can directly send short command packets to the servos, I had previosly been fixated on sending long packets however this was not a wise use of my time and will be better figured out in the later software side. The servos function fine while daisy chained however this introduces the problem of how to talk to all the servos at once without spamming messages through the bus. My current plan is to use 5 PIO pins on a RP2350,to control each limb independently without creating congestion on the bus network, This gives me a balance between congestion and control by allowing each limb to be prioritised when needed without spamming commands. This doesnt eliminate the spam but reduces it greatly while allowing better control directing it where it needs to go.
-                      </p>
 
                       <div class="gallery">
+                                <div class="gallery-item">
+                                <a target="tester.png"  href="media/images/tester.png"> <img src="media/images/tester.png" alt="Robi LCD Eyes"  width="600" height="400"> </a>
+                                <div class="desc">Half Duplex Communications Debugger</div>
+                                </div>
+
+
+                                <div class="gallery-item">
+                                <a target="testFrame.png" href= "media/images/testFrame.png" > <img src="media/images/testFrame.png" alt="Robi LCD Eyes" width="600" height="400"> </a>
+                                <div class="desc">Assembly Fit Test</div>
+                                </div>
+
+
+                                <div class="gallery-item">
+                                <a target="signalsplitter.jpg" href= "media/images/signalsplitter.png"> <img src="media/images/signalsplitter.png" alt="Robi LCD Eyes" width="600" height="400"> </a>
+                                <div class="desc">Crude Signal Splitter</div>
+                                </div>
 
 
                                 <div class="gallery-item">
                                 <a target="boardproto.jpg" href= "media/images/boardproto.png"> <img src="media/images/boardproto.png" alt="Robi LCD Eyes" width="600" height="400"> </a>
-                                <div class="desc">Breadboarding Hardware with an ESP32 and logic shifter, This is limited by 1 serial port</div>
-                                </div>
-
-                                                      <div class="gallery-item">
-                                <a target="signalsplitter.jpg" href= "media/images/signalsplitter.png"> <img src="media/images/signalsplitter.png" alt="Robi LCD Eyes" width="600" height="400"> </a>
-                                <div class="desc">Crude Signal Splitter</div>
+                                <div class="desc">Breadboarding Hardware</div>
                                 </div>
                      </div>
-
-
-                                <a target="Robi Servo Layout.png" href= "media/images/Robi Servo Layout.png"> <img src="media/images/Robi Servo Layout.png" alt="Robi LCD Eyes" width=100%> </a>
-                                <div class="desc">Servo Layout, Follows Original</div>
-
-
-                                <a target="Esp32Driver.png" href= "media/images/Esp32Driver.png"> <img src="media/images/Esp32Driver.png" alt="Robi LCD Eyes" width=100%> </a>
-                                <div class="desc">This is the initial prototype driver using an ESP32</div>
-
-
-                      <p>
-                        Here I do some basic testing with all the servos, I also did a test of head tracking a circle which I will find the footage for. This was a bit milestone for me as I had spent so much time learning about communication protocols, signal integrity and programming structure/flow.
-
 
                       <div class= "video_gallery">
                       <div class= "video_gallery-item">
@@ -286,11 +158,6 @@
                       <div class="desc">Test Wave</div>
                         </div>
                       </div>
-
-                                <a target="Pub_Sub Diagram.png" href= "media/images/Pub_Sub Diagram.png"> <img src="media/images/Pub_Sub Diagram.png" alt="Robi LCD Eyes" width=100%> </a>
-                                <div class="desc">Basic Communications bus logic using open CV demo</div>
-
-
             </section>
 
 
@@ -317,139 +184,20 @@
                                 <div class="desc">Fine Tuning Position</div>
                                 </div>
 
-
+                                <div class="gallery-item">
+                                <a target="amp.png"  href="media/images/amp.png" > <img src="media/images/amp.png"  alt="Robi LCD Eyes"  width="600" height="400"> </a>
+                                <div class="desc">Speaker Amplifier</div>
+                                </div>
 
                                 <div class="gallery-item">
                                 <a target="lcdBreakout.png" href= "media/images/lcdBreakout.png"  > <img src="media/images/lcdBreakout.png"  alt="Robi LCD Eyes" width="600" height="400"> </a>
                                 <div class="desc">SPI Header Board</div>
                                 </div>
 
-                                <div class="gallery-item">
-                                <a target="amp.png"  href="media/images/amp.png" > <img src="media/images/amp.png"  alt="Robi LCD Eyes"  width="600" height="400"> </a>
-                                <div class="desc">Speaker Amplifier</div>
-                                </div>
-
-
                      </div>
 
-
-                      <div class="gallery">
-
-                                <div class="gallery-item">
-                                <a target="testFrame.png" href= "media/images/testFrame.png" > <img src="media/images/testFrame.png" alt="Robi LCD Eyes" width="600" height="400"> </a>
-                                <div class="desc">Assembly Fit Test</div>
-                                </div>
-
-                     </div>
-
-
             </section>
 
-            <section>
-                      <h2>What Tools Do I Use?</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-
-            <section>
-                      <h2>Developing a new Controller Board</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-            <section>
-                      <h2> Designing the software stack</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-
-
-            <section>
-                      <h2> A sense of balance IMUs and PIDs</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-
-          <section>
-                      <h2>Poses, Walk and Talk</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-
-
-
-
-            <section>
-                      <h2> Neural Networks, Machine Learning and Realtime Machine Minds</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-            <section>
-                      <h2> Memory, Senses and Developing Experiences</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-            <section>
-                      <h2>Modelling the World and Interactions</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-            <section>
-                      <h2>Hardware Review and Tally</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-           <section>
-                      <h2>Experiments and Research</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-
-            <section>
-                      <h2>Future Direction</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
-
-
-            <section>
-                      <h2>Resources</h2>
-                      <p>
-                        To Be Concluded
-                      </p>
-
-            </section>
       </main>
 
 
