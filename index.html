@@ -13,7 +13,64 @@
 </head>
 
 <body>
+                <shader-doodle>
+                  <script id="shaderv" type="x-shader/x-fragment">
+                    /**************************
+                    Void shader by Griffith Thomas
+                    (@KiranWells - Codepen),
+                    inspired by Minecraft end portal blocks
+                    **************************/
 
+                    float scale = 6.0;
+
+                    float random(in vec2 _st) {
+                      return fract(dot(vec2((mod(_st.x / cos(_st.y), 5.0) * 1000.0)), vec2(1.1)));
+                    }
+
+                    vec2 random2(vec2 p) {
+                      return vec2(random(p), random(p.yx + random(p)));
+                    }
+
+                    vec2 cell(vec2 st) {
+                      vec2 i = floor(st);
+                      vec2 f = fract(st);
+
+                      vec2 point = random2(i);
+                      vec2 dir = random2(-i);
+
+                      point += cos(u_time + random(i) * 12.2 + point.y) * dir / 4.;
+
+                      vec2 diff = point - f;
+
+                      return smoothstep(0.1, 0.11, abs(diff));
+                    }
+
+                    void main() {
+
+                      vec2 st = gl_FragCoord.xy / 1000.0 * scale + 2.0;
+
+                      vec3 color  = vec3(0.0);
+                      vec3 black  = vec3(0.0);
+                      vec3 green  = vec3(0.1, 0.2, 0.4);
+                      vec3 dgreen = vec3(0.2, 0.2, 0.3);
+                      vec3 bgreen = vec3(0.1, 0.4, 0.8);
+
+                      for (float i = 0.; i < 2.; i++) {
+
+                        vec2 dist = cell(st * i).xy;
+                        color += mix(green, black, dist.x + dist.y);
+
+                        dist = cell(st * (2. + i)).xy;
+                        color += mix(dgreen, black, dist.x + dist.y);
+
+                        dist = cell(st * (3. + i)).xy;
+                        color += mix(bgreen, black, dist.x + dist.y);
+                      }
+
+                      gl_FragColor = vec4(color, 0.7);
+                    }
+                  </script>
+                </shader-doodle>
     <header>
               <div class="hero-image">
                 <div class="hero-text">
@@ -132,66 +189,6 @@
                     This means I need to rest more than usual and often results in naps and gaps of progression at times, my focus seems to be erattic at times but usually because I see something that could contribute to my main projects or intrigues me greatly.
                   </p>
           </section>
-
-
-                <shader-doodle>
-                  <script id="shaderv" type="x-shader/x-fragment">
-                    /**************************
-                    Void shader by Griffith Thomas
-                    (@KiranWells - Codepen),
-                    inspired by Minecraft end portal blocks
-                    **************************/
-
-                    float scale = 6.0;
-
-                    float random(in vec2 _st) {
-                      return fract(dot(vec2((mod(_st.x / cos(_st.y), 5.0) * 1000.0)), vec2(1.1)));
-                    }
-
-                    vec2 random2(vec2 p) {
-                      return vec2(random(p), random(p.yx + random(p)));
-                    }
-
-                    vec2 cell(vec2 st) {
-                      vec2 i = floor(st);
-                      vec2 f = fract(st);
-
-                      vec2 point = random2(i);
-                      vec2 dir = random2(-i);
-
-                      point += cos(u_time + random(i) * 12.2 + point.y) * dir / 4.;
-
-                      vec2 diff = point - f;
-
-                      return smoothstep(0.1, 0.11, abs(diff));
-                    }
-
-                    void main() {
-
-                      vec2 st = gl_FragCoord.xy / 1000.0 * scale + 2.0;
-
-                      vec3 color  = vec3(0.0);
-                      vec3 black  = vec3(0.0);
-                      vec3 green  = vec3(0.1, 0.2, 0.4);
-                      vec3 dgreen = vec3(0.2, 0.2, 0.3);
-                      vec3 bgreen = vec3(0.1, 0.4, 0.8);
-
-                      for (float i = 0.; i < 2.; i++) {
-
-                        vec2 dist = cell(st * i).xy;
-                        color += mix(green, black, dist.x + dist.y);
-
-                        dist = cell(st * (2. + i)).xy;
-                        color += mix(dgreen, black, dist.x + dist.y);
-
-                        dist = cell(st * (3. + i)).xy;
-                        color += mix(bgreen, black, dist.x + dist.y);
-                      }
-
-                      gl_FragColor = vec4(color, 0.7);
-                    }
-                  </script>
-                </shader-doodle>
 
     </main>
 
